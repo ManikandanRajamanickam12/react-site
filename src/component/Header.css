@@ -1,0 +1,74 @@
+
+  .restaurant_name {
+    background-color: #9764af !important;
+    font-weight: bold;
+    font-size: large;
+   
+  }
+  .title{
+      
+      padding-top: 10px;
+  }
+  
+  .nav_items p {
+    color: white;
+  }
+  
+  .navbar-custom {
+  
+   display: flex;
+   justify-content: center;
+   font-weight: normal;
+   align-items: center;
+  
+  }
+  .nav-link {
+    border-bottom: rgba(255, 255, 255, 0.5) solid 1px;
+    width: 80vw;
+    margin:0px auto;
+    
+   }
+  
+   .nav-link:nth-child(4) {
+    border: none;
+  }
+ 
+  .router-link {
+    text-decoration: none !important ;
+  }
+  
+  
+  
+  #nav-select:hover {
+    font-size: 25px;
+  
+  }
+  
+  
+   
+  #nav-select {
+    max-width: 80vh;
+    height: 50px;
+   
+   
+  }
+  
+  @media (min-width: 991px) {
+    .nav-link {
+      width: fit-content;
+      border: none;
+    }
+  
+    #nav-select {
+      width: 100px;
+      height: 40px;
+    }
+  
+  }
+  
+  .dish_list {
+    width: 70vw;
+    display: flex;
+    margin: 10px auto;
+    flex-wrap: wrap;
+  }

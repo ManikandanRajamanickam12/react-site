@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-
+import { BrowserRouter, Link, Route, Router } from 'react-router-dom';
+import About from './component/About';
+import Footer from './component/Footer';
+import SelectedItem from './component/SelectedItem';
+import Header from './component/Header';
+import Home from './component/Home';
+import  Menu  from './Menu';
+import { DISHES } from './dishes';
+import Contact from './component/contact';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+     <Header/>
+     <Route path="/" exact>
+        <Home />
+    </Route>
+    
+     
+    <Route path='/menu' exact>
+        <Menu DISHES={DISHES}/>
+    </Route>
+    {DISHES.map(dish =>
+    <Route path={'/menu/'+ dish.name} exact > 
+    <SelectedItem dishSelected = {dish}/> 
+    </Route>
+    )} 
+     <Route path='/about' exact>
+      <About />
+    </Route>
+    <Route path='/contact' exact>
+     <Contact/>
+    </Route>
+    
+    <Footer />
     </div>
   );
 }
